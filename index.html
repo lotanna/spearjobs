@@ -35,7 +35,7 @@
         
         }
         #refresh {
-		display: block;
+		
 		width: 35%;
 		display:none;
 		text-align: center;
@@ -56,16 +56,13 @@
     
 
    
-      
+      function onLoad() {
+        document.addEventListener("online", onOnline, false);
         document.addEventListener("deviceready", onDeviceReady, false);
-        function onDeviceReady() {
-  
-    
-          	onOnline();
-          
-        
     }
-        document.addEventListener("offline", refresh, false);
+
+       
+        
     
 
    
@@ -98,13 +95,21 @@
 	}
     // Cordova is ready
     //
+     function onDeviceReady() {
+     
+     document.addEventListener("offline", refresh, false);
     
+    
+          	
+          
+        
+    }
 
     </script>
   </head>
   
   
-  <body>
+<body onload="onLoad()">
   
   <a href='#' id='refresh'>:( Check your connectiong </a>
   
