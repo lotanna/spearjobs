@@ -58,6 +58,13 @@
    
       
         document.addEventListener("deviceready", onDeviceReady, false);
+        function onDeviceReady() {
+  
+    
+          	onOnline();
+          
+        
+    }
         document.addEventListener("offline", refresh, false);
     
 
@@ -68,7 +75,7 @@
    
     function onOnline() {
    
-    iabRef = window.open('http://m.spearjobs.com','_blank', 'location=no');
+    iabRef = window.open('http://m.spearjobs.com','_self','location=no');
     
     
     }
@@ -91,13 +98,7 @@
 	}
     // Cordova is ready
     //
-    function onDeviceReady() {
-  
     
-          	onOnline();
-          
-        
-    }
 
     </script>
   </head>
